@@ -1,0 +1,76 @@
+.header {
+  position: fixed;
+  top: 0;
+  left:0;
+  width: 100%;
+
+  z-index: 20;
+  transition: .3s;
+  &__menu {
+    a {
+
+    }
+  }
+}
+
+.menu {
+  display: flex;
+  min-height: 4rem;
+  align-items: center;
+  padding: 0 10rem;
+  &__link {
+    color: $mainColor;
+    transition: all .3s;
+    margin-right: 1.5rem;
+    &:last-child{
+      margin: 0 0 0 auto;
+    }
+    &._active {
+      h3 {
+        color: $greenColor;
+      }
+      &:any-link:hover {
+        transform: translate(0);
+      }
+      &:not(:last-child){
+        color: $greenColor;
+        text-shadow: 0 0 .5em $greenColor;
+        position: relative;
+        &::after {
+          content:'';
+          position: absolute;
+          left: 0;
+          top: 100%;
+          width: 100%;
+          background-color: $greenColor;
+          height: 2px;
+          box-shadow: 0 0 .5em $greenColor;
+        }
+    }
+      &:last-child {
+        box-shadow: 0 0 .5rem $greenColor;
+        background-color: $greenColor;
+        color: $bgColor;
+      }
+    }
+    &_focus {
+      &:any-link {
+        letter-spacing: .1em;
+        color: $greenColor;
+        border: 2px $greenColor solid;
+        border-radius: 8px;
+        padding: .5rem 1.5rem;
+        transition: .3s;
+        &:hover {
+          box-shadow: 0 0 .5rem $greenColor;
+          background-color: $greenColor;
+          color: $bgColor;
+        }
+      }
+    }
+    &:any-link:not(:last-child):hover {
+      color: $greenColor;
+      transform: translateY(-4px);
+    }
+  }
+}

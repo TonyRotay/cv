@@ -1,0 +1,51 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,400;0,600;0,800;0,900;1,400;1,600&display=swap');
+
+* {
+  font-family: Nunito Sans, sans-serif;
+  font-size: 16px;
+  color: $mainColor;
+}
+
+h1, h2, h3, h4, p {
+  line-height: 100%;
+  display: inline-block;
+}
+
+h1 {
+  font-weight: $Black;
+  font-size: 3rem;
+}
+
+h2 {
+  font-weight: $ExtraBold;
+  font-size: 2rem;
+}
+
+h3 {
+  font-weight: $Black;
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: .1em;
+}
+
+h4, p {
+  line-height: 1.1em;
+  font-weight: $Regular;
+  font-size: 1rem;
+  letter-spacing: .1em;
+}
+
+span {
+  font-family: inherit;
+  color: $greenColor;
+  font-size: inherit;
+  letter-spacing: inherit;
+}
+
+ul li {
+  font-weight: $SemiBold;
+}
+
+a, a:active, a:visited {
+  font-weight: $SemiBold;
+}
