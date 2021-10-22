@@ -1,5 +1,8 @@
 particlesJS.load('particles-js', 'js/particles.json');
 
+document.querySelector('.header').style.visibility = 'hidden';
+document.querySelector('.header').style.opacity = '0';
+
 let pageSlider = new Swiper('.page', {
     wrapperClass: "page__wrapper",
     slideClass: "page__screen",
@@ -63,6 +66,20 @@ function menuSliderRemove(params) {
 }
 
 pageSlider.init();
+
+document.addEventListener('wheel', onwheel);
+
+function onwheel() {
+    document.querySelector('.screen_hero');
+    if (document.querySelector('.screen_hero').classList.contains('swiper-slide-visible')){
+        document.querySelector('.header').style.visibility = 'hidden';
+        document.querySelector('.header').style.opacity = '0';
+    }
+    else {
+        document.querySelector('.header').style.visibility = 'visible';
+        document.querySelector('.header').style.opacity = '1';
+    }
+}
 
 /*if(menuLinks[pageSlider.realIndex].classList.contains('_logo')) {
     document.querySelector('.header').style.visibility = 'hidden';
