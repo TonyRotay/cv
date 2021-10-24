@@ -33,12 +33,14 @@
         <div class="page__wrapper">
             <div class="page__screen screen screen_hero">
                 <div class="page__header">
-                    <h3 class="page__logo">Антон Ротай</h3>
-                    <div class="page__socials socials">
-                        <i class="socials__icon fab fa-vk"></i>
-                        <i class="socials__icon fab fa-github"></i>
-                        <i class="socials__icon fab fa-instagram"></i>
-                        <i class="socials__icon fab fa-telegram-plane"></i>
+                    <div class="header__container">
+                        <h3 class="page__logo">Антон Ротай</h3>
+                        <div class="page__socials socials">
+                            <i class="socials__icon fab fa-vk"></i>
+                            <i class="socials__icon fab fa-github"></i>
+                            <i class="socials__icon fab fa-instagram"></i>
+                            <i class="socials__icon fab fa-telegram-plane"></i>
+                        </div>
                     </div>
                 </div>
                 <div class="screen__content screen__content_hero">
@@ -261,25 +263,89 @@
             <div class="page__screen screen">
                 <div class="screen__content content">
                     <div class="content__portfolio portfolio">
-                        <div class="portfolio__work portfolio__work_1 work"><img src="pics/react1.PNG" alt="work1">
-                            <div class="work__description">
-                                <h4>Приложение "Заметки". ReactJS.</h4>
-                                <div class="work__links">
-                                    <i class="socials__icon fab fa-github"></i>
-                                    <i class="fas fa-external-link-alt"></i>
+                        <div class="content__article">
+                            <h2 class="screen__subtitle" data-swiper-parallax="-50%" data-swiper-parallax-opacity="0"
+                                data-swiper-parallax-duration="800">Портфолио</h2>
+                            <p class="screen__paragraph" data-swiper-parallax="-50%" data-swiper-parallax-opacity="0"
+                               data-swiper-parallax-duration="800">На сайте представлены только лучшие, по моему мнению,
+                                проекты. Больше проектов можно посмотреть в моем Github профиле.</p>
+                            <div class="content__buttons">
+                                <a href="#" class="screen__button">Перейти на Github</a>
+                            </div>
+                        </div>
+                        <div class="portfolio__workslist">
+                            <div class="portfolio__work work">
+                                <div class="work__image"><img src="pics/Weather.png" alt="My work"></div>
+                                <div class="work__description">
+                                    <h4>Tell me the weather</h4>
+                                    <p class="screen__paragraph">Приложение демонстрации погоды с советами что
+                                        надеть</p>
+                                    <p class="screen__paragraph"><br>ReactJS, SCSS</p>
+                                    <div class="work__icons">
+                                        <i class="socials__icon fab fa-github"></i>
+                                        <i class="fas fa-external-link-alt"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="portfolio__work work">
+                                <div class="work__image"><img src="pics/react1.PNG" alt="My work"></div>
+                                <div class="work__description">
+                                    <h4>Notes app</h4>
+                                    <p class="screen__paragraph">Приложение для создания заметок</p>
+                                    <p class="screen__paragraph"><br>ReactJS</p>
+                                    <div class="work__icons">
+                                        <i class="socials__icon fab fa-github"></i>
+                                        <i class="fas fa-external-link-alt"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="portfolio__work work">
+                                <div class="work__image"><img src="pics/fwstorage.PNG" alt="My work"></div>
+                                <div class="work__description">
+                                    <h4>Footwear Storage</h4>
+                                    <p class="screen__paragraph">Приложение для навигации по обувному складу розничных
+                                        магазинов</p>
+                                    <p class="screen__paragraph"><br>Native JS, IndexedDB</p>
+                                    <div class="work__icons">
+                                        <i class="socials__icon fab fa-github"></i>
+                                        <i class="fas fa-external-link-alt"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="portfolio__work work">
+                                <div class="work__image"><img src="pics/landingpage.png" alt="My work"></div>
+                                <div class="work__description">
+                                    <h4>CV website</h4>
+                                    <p class="screen__paragraph">Landing page для себя любимого :)</p>
+                                    <p class="screen__paragraph"><br>SCSS, Native JS</p>
+                                    <div class="work__icons">
+                                        <i class="socials__icon fab fa-github"></i>
+                                        <i class="fas fa-external-link-alt"></i>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="portfolio__work portfolio__work_2"><img src="pics/oldtimers.png" alt="work2"></div>
-                        <div class="portfolio__work portfolio__work_3"><img src="pics/Weather.png" alt="work2"></div>
-                        <div class="portfolio__work portfolio__work_4"><img src="pics/fwstorage.PNG" alt="work4"></div>
-                        <div class="portfolio__work portfolio__work_5"><img src="pics/login.PNG" alt="work4"></div>
                     </div>
                 </div>
             </div>
             <div class="page__screen screen">
                 <div class="screen__content content">
-
+                    <div class="content__article">
+                        <h2 class="screen__subtitle" data-swiper-parallax="-50%" data-swiper-parallax-opacity="0"
+                            data-swiper-parallax-duration="800">Связаться со мной</h2>
+                        <p class="screen__paragraph" data-swiper-parallax="-50%" data-swiper-parallax-opacity="0"
+                           data-swiper-parallax-duration="800">Понравился сайт и мои проекты? Нажми на одну из кнопок,
+                            чтобы связаться со мной или позвони по телефону. Спасибо за визит! Приходи еще!</p>
+                    </div>
+                    <div class="content__details content__details_contact">
+                        <div class="page__socials socials">
+                            <i class="socials__icon fab fa-vk"></i>
+                            <i class="socials__icon fab fa-telegram-plane"></i>
+                            <i class="socials__icon far fa-envelope"></i>
+                        </div>
+                        <p>+7 (915) 011 45 91</p>
+                        <p><span>*</span> Предпочтительнее использовать почту</p>
+                    </div>
                 </div>
             </div>
         </div>

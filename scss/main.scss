@@ -9,6 +9,14 @@
 }
 */
 
+.header__container {
+  max-width: 67.5rem;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
 .page {
   position: fixed;
   top: 0;
@@ -26,14 +34,12 @@
   }
 
   &__header {
-    padding: 0 20rem;
     margin: 1rem 0;
+    width: 100%;
     position: relative;
     z-index: 2;
     pointer-events: none;
-    display: flex;
     align-items: center;
-    justify-content: space-between;
   }
 
   &__socials {
@@ -120,7 +126,7 @@
   }
 
   &__content {
-    padding: 0 20rem;
+    margin: 0 auto;
     width: 100%;
     display: flex;
     justify-content: space-between;
@@ -231,15 +237,14 @@
 }
 
 .content {
+  max-width: 67.5rem;
   display: flex;
   flex-direction: row;
   align-items: center;
   &__buttons {
-    .screen__button:last-child {
-      margin-left: 1.5rem;
-    }
-
-    margin-top: 3rem;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 2rem;
   }
 
   &__article {
@@ -252,80 +257,106 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    align-items: center;
+    text-align: right;
   }
 
   &__portfolio {
-    display: grid;
-    grid-template-columns: repeat(4, [col] 1fr);
-    grid-template-rows: repeat(4, [row] 1fr);
-    grid-gap: 1rem;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    display: flex;
+  }
+  &__details {
+    display: flex;
+    flex-direction: column;
+    &_contact {
+      p {
+        margin-top: .5rem;
+      }
+      text-align: center;
+    }
   }
 }
 
 .portfolio {
-  padding-top: 4rem;
-  width: 100%;
-  height: 100%;
-  &__work {
-    background-color: $darkColor;
-    height: 33.33vh;
-    position: relative;
-    overflow: hidden;
-    img {
+  .portfolio__workslist {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-gap: 3rem;
+    .portfolio__work {
+      width: 15rem;
+      height: 15rem;
+      background-color: $darkColor;
+      border: 2px $greenColor solid;
+      border-radius: .5rem;
       position: relative;
-      top: 0;
-      left: 0;
-      height: 100%;
-      width: 100%;
-      object-fit: cover;
-    }
-    &_1, &_2, &_4 {
-      width: 100%;
-    }
-    &_1  {
-      background-color: #FF4C4C;
-      grid-column: col 1 / col 3;
-      grid-row: row 1 / row 3;
-    }
-    &_2 {
-      background-color: cornflowerblue;
-      grid-column: col 3 / col 5;
-      grid-row: row 1 / row 3;
-    }
-    &_3 {
-      grid-column: col 1 / col 2;
-      grid-row: row 3 / row 5;
-      background-color: #83C510;
-    }
-    &_4 {
-      grid-column: col 2 / col 4;
-      grid-row: row 3 / row 5;
-      background-color: darkseagreen;
-    }
-    &_5 {
-        grid-column: col 4 / col 5;
-        grid-row: row 3 / row 5;
-        background-color: lightpink;
+      overflow: hidden;
+      &:hover {
+        .work__description {
+          visibility: visible;
+          transform: translateX(100%);
+        }
       }
     }
-  //&:hover {
-  //  .work__description {
-  //    visibility: visible;
-  //    opacity: 1;
-  //  }
-  //}
-  }
+    .work {
+      &__image {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
 
-.work {
-  &__description {
-    visibility: hidden;
-    opacity: 0;
-    height: 100%;
-    position: relative;
-    top: -100%;
-    left: 0;
-    background-color: #05E494A8;
-    color: $darkColor;
+        img {
+          border-radius: .35rem;
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          top: 0;
+          left: 0;
+          object-fit: cover;
+        }
+      }
+      &__description {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 100%;
+        height: 100%;
+        padding: 1rem;
+        background-color: $greenColor;
+        position: absolute;
+        bottom: 0; left: -100%;
+        z-index: 200;
+        transition: .3s;
+        visibility: hidden;
+        h4 {
+          text-transform: uppercase;
+          font-weight: $ExtraBold;
+          color: $bgColor;
+          margin-bottom: .5rem;
+        }
+        p {
+          color: $bgColor;
+          font-size: .8rem;
+        }
+      }
+      &__icons {
+        margin-top: .5rem;
+        i {
+          font-size: 1.5rem;
+          color: $bgColor;
+          transition: .3s;
+          &:last-child {
+            padding-left: 1.5rem;
+          }
+          &:hover {
+            color: $mainColor;
+          }
+        }
+      }
+    }
   }
 }
 
@@ -391,6 +422,7 @@
 
 .skills {
   .skill {
+    width: 100%;
     .screen__paragraph {
       text-align: right;
       flex: 1 0 auto;
