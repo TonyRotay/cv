@@ -127,6 +127,7 @@ a, a:active, a:visited {
 */
 .header__container {
   max-width: 67.5rem;
+  padding: 0 1rem;
   margin: 0 auto;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -264,8 +265,10 @@ a, a:active, a:visited {
           justify-content: space-between;
   position: relative;
   z-index: 2;
+  padding: 0 1rem;
 }
 .screen__content_hero {
+  text-align: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -296,6 +299,7 @@ a, a:active, a:visited {
   margin: 0 0 1rem;
 }
 .screen__paragraph {
+  max-width: 28rem;
   text-align: left;
 }
 .screen__button {
@@ -309,13 +313,28 @@ a, a:active, a:visited {
   -webkit-transition: 0.3s;
   transition: 0.3s;
 }
+.screen__button_contact {
+  margin-left: 1rem;
+}
 .screen__button:-webkit-any-link {
+  -webkit-box-flex: 0;
+          flex: none;
+  white-space: nowrap;
+  display: inline-block;
   color: #05E494;
 }
 .screen__button:-moz-any-link {
+  flex: none;
+  white-space: nowrap;
+  display: inline-block;
   color: #05E494;
 }
 .screen__button:any-link {
+  -webkit-box-flex: 0;
+      -ms-flex: none;
+          flex: none;
+  white-space: nowrap;
+  display: inline-block;
   color: #05E494;
 }
 .screen__button_active:-webkit-any-link {
@@ -410,9 +429,9 @@ a, a:active, a:visited {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: start;
   margin-top: 2rem;
 }
 .content__article {
@@ -452,6 +471,7 @@ a, a:active, a:visited {
   display: flex;
 }
 .content__details {
+  margin-top: 2rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -468,6 +488,7 @@ a, a:active, a:visited {
 }
 
 .portfolio .portfolio__workslist {
+  margin-top: 2rem;
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: 1fr 3rem 1fr;
@@ -497,8 +518,8 @@ a, a:active, a:visited {
   -ms-grid-column: 3;
 }
 .portfolio .portfolio__workslist .portfolio__work {
-  width: 15rem;
-  height: 15rem;
+  width: 14rem;
+  height: 14rem;
   background-color: #161616;
   border: 2px #05E494 solid;
   border-radius: 0.5rem;
@@ -608,7 +629,7 @@ a, a:active, a:visited {
   position: relative;
 }
 .timeline .entry:last-child {
-  margin-top: 10rem;
+  margin-top: 5rem;
 }
 .timeline .entry__title {
   width: 33.33%;
@@ -649,7 +670,7 @@ a, a:active, a:visited {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  max-width: 30rem;
+  max-width: 20rem;
 }
 
 .skills .skill {
@@ -730,7 +751,9 @@ a, a:active, a:visited {
 }
 .header__menu {
   max-width: 67.5rem;
+  padding: 0 1rem;
 }
+
 .menu {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -843,4 +866,151 @@ a, a:active, a:visited {
   color: #05E494;
   -webkit-transform: translateY(-4px);
           transform: translateY(-4px);
+}
+
+@media (max-width: 1023px) {
+  .menu__link:not(.menu__link_logo) {
+    visibility: hidden;
+    opacity: 0;
+  }
+
+  .screen__image {
+    left: 3rem;
+    -webkit-transition: 0.3s;
+    transition: 0.3s;
+  }
+}
+@media (max-width: 900px) {
+  .content__article {
+    padding: 0;
+  }
+
+  .content__portfolio {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .content__portfolio .portfolio__workslist {
+    grid-gap: 2rem;
+  }
+
+  .screen__image {
+    visibility: hidden;
+  }
+
+  .screen__content:not(.screen__content_hero) {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+}
+@media (max-width: 530px) {
+  .content__portfolio > .portfolio__workslist > .portfolio__work {
+    width: 14rem;
+    height: 14rem;
+  }
+}
+@media (max-width: 510px) {
+  .content__portfolio > .portfolio__workslist > .portfolio__work {
+    width: 13rem;
+    height: 13rem;
+  }
+}
+@media (max-width: 480px) {
+  .content__portfolio > .portfolio__workslist > .portfolio__work {
+    width: 12rem;
+    height: 12rem;
+  }
+}
+@media (max-width: 460px) {
+  .content__portfolio > .portfolio__workslist > .portfolio__work {
+    width: 14rem;
+    height: 14rem;
+  }
+
+  * {
+    font-size: 14px;
+  }
+
+  .skills > .skill > .skill__progress-bar {
+    width: 14rem;
+  }
+
+  .content__buttons_experience {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .content__buttons_experience .screen__button {
+    max-width: 12rem;
+  }
+  .content__buttons_experience .screen__button_contact {
+    max-width: 15rem;
+    margin: 1rem 0 0 0;
+  }
+}
+@media (max-width: 444px) {
+  .content__portfolio > .portfolio__workslist > .portfolio__work {
+    width: 13rem;
+    height: 13rem;
+  }
+
+  .header__container {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    margin: 0 auto;
+  }
+  .header__container .page__logo {
+    margin-bottom: 0.5rem;
+  }
+}
+@media (max-width: 416px) {
+  .content__portfolio > .portfolio__workslist {
+    grid-gap: 1rem;
+  }
+}
+@media (max-width: 391px) {
+  .content__portfolio > .portfolio__workslist > .portfolio__work {
+    width: 12rem;
+    height: 12rem;
+  }
+}
+@media (max-width: 379px) {
+  .content__portfolio > .portfolio__workslist > .portfolio__work {
+    width: 11rem;
+    height: 11rem;
+  }
+  .content__portfolio > .portfolio__workslist > .portfolio__work .work__description h4 {
+    margin: 0;
+  }
+  .content__portfolio > .portfolio__workslist > .portfolio__work .work__description p.screen__paragraph.screen__paragraph_subtitle {
+    display: none;
+  }
+}
+@media (max-width: 349px) {
+  .content__portfolio > .portfolio__workslist > .portfolio__work {
+    width: 10rem;
+    height: 10rem;
+  }
+
+  .skills > .skill > .skill__progress-bar {
+    width: 13rem;
+  }
+
+  .timeline .entry__body p {
+    font-size: 13px;
+  }
+}
+@media (max-width: 320px) {
+  * {
+    font-size: 13px;
+  }
 }

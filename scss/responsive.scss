@@ -1,0 +1,138 @@
+@media (max-width: 1023px) {
+  .menu__link:not(.menu__link_logo) {
+    visibility: hidden;
+    opacity: 0;
+  }
+  .screen__image {
+    left: 3rem;
+    transition: .3s;
+  }
+}
+
+@media (max-width: 900px) {
+  .content__article {
+    padding: 0;
+  }
+  .content__portfolio {
+    flex-direction: column;
+    .portfolio__workslist {
+      grid-gap: 2rem;
+    }
+  }
+
+  .screen__image {
+    visibility: hidden;
+  }
+  .screen__content:not(.screen__content_hero) {
+    flex-direction: column;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 530px) {
+  .content__portfolio > .portfolio__workslist > .portfolio__work {
+    width: 14rem;
+    height: 14rem;
+  }
+}
+
+@media (max-width: 510px) {
+  .content__portfolio > .portfolio__workslist > .portfolio__work {
+    width: 13rem;
+    height: 13rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .content__portfolio > .portfolio__workslist > .portfolio__work {
+    width: 12rem;
+    height: 12rem;
+  }
+}
+
+@media (max-width: 460px) {
+  .content__portfolio > .portfolio__workslist > .portfolio__work {
+    width: 14rem;
+    height: 14rem;
+  }
+  * {
+    font-size: 14px;
+  }
+  .skills > .skill > .skill__progress-bar {
+    width: 14rem;
+  }
+  .content__buttons_experience {
+    .screen__button {
+      max-width: 12rem;
+    }
+    .screen__button_contact {
+      max-width: 15rem;
+      margin: 1rem 0 0 0;
+    }
+    flex-direction: column;
+    a {}
+  }
+}
+
+@media (max-width: 444px) {
+  .content__portfolio > .portfolio__workslist > .portfolio__work {
+    width: 13rem;
+    height: 13rem;
+  }
+  .header__container {
+    flex-direction: column;
+    margin: 0 auto;
+    .page__logo {
+      margin-bottom: .5rem;
+    }
+  }
+}
+
+@media (max-width: 416px) {
+  .content__portfolio > .portfolio__workslist {
+    grid-gap: 1rem;
+  }
+}
+
+@media (max-width: 391px) {
+  .content__portfolio > .portfolio__workslist > .portfolio__work {
+    width: 12rem;
+    height: 12rem;
+  }
+}
+
+@media (max-width: 379px) {
+  .content__portfolio > .portfolio__workslist > .portfolio__work {
+    width: 11rem;
+    height: 11rem;
+    .work__description{
+      h4 {
+        margin: 0;
+      }
+      p.screen__paragraph.screen__paragraph_subtitle {
+        display: none;
+      }
+    }
+  }
+}
+
+@media (max-width: 349px) {
+  .content__portfolio > .portfolio__workslist > .portfolio__work {
+    width: 10rem;
+    height: 10rem;
+  }
+  .skills > .skill > .skill__progress-bar {
+    width: 13rem;
+  }
+  .timeline .entry__body {
+    p {
+      font-size: 13px;
+    }
+  }
+}
+
+@media (max-width: 320px) {
+  * {
+    font-size: 13px;
+  }
+}

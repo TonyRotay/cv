@@ -3,14 +3,11 @@
   top: 0;
   left:0;
   width: 100%;
-
   z-index: 20;
   transition: .3s;
   &__menu {
     max-width: 67.5rem;
-    a {
-
-    }
+    padding: 0 1rem;
   }
 }
 

@@ -11,6 +11,7 @@
 
 .header__container {
   max-width: 67.5rem;
+  padding: 0 1rem;
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
@@ -114,7 +115,6 @@
     height: 100%;
     top: 0;
     left: 0;
-
     img {
       position: absolute;
       width: 100%;
@@ -132,8 +132,9 @@
     justify-content: space-between;
     position: relative;
     z-index: 2;
-
+    padding: 0 1rem;
     &_hero {
+      text-align: center;
       align-items: center;
       flex-direction: column;
       pointer-events: none;
@@ -165,6 +166,7 @@
   }
 
   &__paragraph {
+    max-width: 28rem;
     text-align: left;
   }
 
@@ -177,7 +179,13 @@
     border: 2px $greenColor solid;
     border-radius: .5rem;
     transition: .3s;
+    &_contact {
+      margin-left: 1rem;
+    }
     &:any-link {
+      flex: none;
+      white-space: nowrap;
+      display: inline-block;
       color: $greenColor;
     }
 
@@ -243,7 +251,7 @@
   align-items: center;
   &__buttons {
     display: flex;
-    justify-content: space-between;
+    justify-content: start;
     margin-top: 2rem;
   }
 
@@ -268,6 +276,7 @@
     display: flex;
   }
   &__details {
+    margin-top: 2rem;
     display: flex;
     flex-direction: column;
     &_contact {
@@ -281,13 +290,14 @@
 
 .portfolio {
   .portfolio__workslist {
+    margin-top: 2rem;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(2, 1fr);
     grid-gap: 3rem;
     .portfolio__work {
-      width: 15rem;
-      height: 15rem;
+      width: 14rem;
+      height: 14rem;
       background-color: $darkColor;
       border: 2px $greenColor solid;
       border-radius: .5rem;
@@ -386,7 +396,7 @@
     display: flex;
     position: relative;
     &:last-child{
-      margin-top: 10rem;
+      margin-top: 5rem;
     }
 
     &__title {
@@ -415,7 +425,7 @@
     &__body {
       display: flex;
       flex-direction: column;
-      max-width: 30rem;
+      max-width: 20rem;
     }
   }
 }
