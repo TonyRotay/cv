@@ -753,6 +753,7 @@ a, a:active, a:visited {
 .header__menu {
   max-width: 67.5rem;
   padding: 0 1rem;
+  white-space: nowrap;
 }
 
 .menu {
@@ -1011,6 +1012,33 @@ a, a:active, a:visited {
   }
 }
 @media (max-width: 320px) {
+  * {
+    font-size: 13px;
+  }
+}
+@media (max-height: 725px) {
+  .screen__subtitle {
+    margin-bottom: 1rem;
+  }
+
+  .content__buttons {
+    margin-top: 1rem;
+  }
+
+  .screen__paragraph_mobile-hidden {
+    display: none;
+  }
+
+  .content__portfolio > .portfolio__workslist {
+    grid-gap: 1rem;
+  }
+
+  .content__portfolio > .portfolio__workslist > .portfolio__work {
+    width: 12rem;
+    height: 12rem;
+  }
+}
+@media (max-height: 610px) {
   * {
     font-size: 13px;
   }
