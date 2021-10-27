@@ -301,6 +301,7 @@ a, a:active, a:visited {
 .screen__paragraph {
   max-width: 28rem;
   text-align: left;
+  display: inline-block;
 }
 .screen__button {
   letter-spacing: 0.1em;

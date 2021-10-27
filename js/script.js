@@ -3,6 +3,74 @@ particlesJS.load('particles-js', 'js/particles.json');
 document.querySelector('.header').style.visibility = 'hidden';
 document.querySelector('.header').style.opacity = '0';
 
+if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|BB|PlayBook|IEMobile|Windows Phone|Kindle|Silk|Opera Mini/i.test(navigator.userAgent)) {
+
+    for (let elem of (document.querySelectorAll('.screen__title'))) {
+        elem.removeAttribute('data-swiper-parallax');
+        elem.removeAttribute('data-swiper-parallax-opacity');
+        elem.removeAttribute('data-swiper-parallax-duration');
+    }
+
+    for (let elem of (document.querySelectorAll('.screen__subsubtitle'))) {
+        elem.removeAttribute('data-swiper-parallax');
+        elem.removeAttribute('data-swiper-parallax-opacity');
+        elem.removeAttribute('data-swiper-parallax-duration');
+    }
+
+    for (let elem of (document.querySelectorAll('.screen__subtitle'))) {
+        elem.removeAttribute('data-swiper-parallax');
+        elem.removeAttribute('data-swiper-parallax-opacity');
+        elem.removeAttribute('data-swiper-parallax-duration');
+    }
+
+    for (let elem of (document.querySelectorAll('.screen__paragraph'))) {
+        elem.removeAttribute('data-swiper-parallax');
+        elem.removeAttribute('data-swiper-parallax-opacity');
+        elem.removeAttribute('data-swiper-parallax-duration');
+    }
+
+    for (let elem of (document.querySelectorAll('.screen__button'))) {
+        elem.removeAttribute('data-swiper-parallax');
+        elem.removeAttribute('data-swiper-parallax-opacity');
+        elem.removeAttribute('data-swiper-parallax-duration');
+    }
+
+    for (let elem of (document.querySelectorAll('.content__buttons'))) {
+        elem.removeAttribute('data-swiper-parallax');
+        elem.removeAttribute('data-swiper-parallax-opacity');
+        elem.removeAttribute('data-swiper-parallax-duration');
+    }
+
+    for (let elem of (document.querySelectorAll('.content__details'))) {
+        elem.removeAttribute('data-swiper-parallax');
+        elem.removeAttribute('data-swiper-parallax-opacity');
+        elem.removeAttribute('data-swiper-parallax-duration');
+    }
+
+    for (let elem of (document.querySelectorAll('.content__timeline'))) {
+        elem.removeAttribute('data-swiper-parallax');
+        elem.removeAttribute('data-swiper-parallax-opacity');
+        elem.removeAttribute('data-swiper-parallax-duration');
+    }
+
+    document.querySelector('.page__background').removeAttribute('data-swiper-parallax');
+    document.querySelector('.page__background').removeAttribute('data-swiper-parallax-opacity');
+    document.querySelector('.page__background').removeAttribute('data-swiper-parallax-duration');
+    document.querySelector('.screen__image').removeAttribute('data-swiper-parallax');
+    document.querySelector('.screen__image').removeAttribute('data-swiper-parallax-opacity');
+    document.querySelector('.screen__image').removeAttribute('data-swiper-parallax-duration');
+    document.querySelector('.content__skills').removeAttribute('data-swiper-parallax');
+    document.querySelector('.content__skills').removeAttribute('data-swiper-parallax-opacity');
+    document.querySelector('.content__skills').removeAttribute('data-swiper-parallax-duration');
+    document.querySelector('.portfolio__workslist').removeAttribute('data-swiper-parallax');
+    document.querySelector('.portfolio__workslist').removeAttribute('data-swiper-parallax-opacity');
+    document.querySelector('.portfolio__workslist').removeAttribute('data-swiper-parallax-duration');
+
+}
+
+
+// screen__title screen__subsubtitle screen__button page__background screen__paragraph screen__image content__buttons content__timeline content__skills portfolio__workslist content__details
+
 let pageSlider = new Swiper('.page', {
     wrapperClass: "page__wrapper",
     slideClass: "page__screen",
@@ -26,7 +94,6 @@ let pageSlider = new Swiper('.page', {
         dragClass: 'page__drag-scroll',
         draggable: true,
     },
-
     init: false,
 
     on: {
