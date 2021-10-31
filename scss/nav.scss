@@ -1,75 +1,110 @@
 .header {
   position: fixed;
   top: 0;
-  left:0;
+  left: 0;
   width: 100%;
   z-index: 20;
   transition: .3s;
-  &__menu {
+
+  &__container {
+    height: 4rem;
     max-width: 67.5rem;
     padding: 0 1rem;
     white-space: nowrap;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
   }
 }
 
 .menu {
+  width: 100%;
   display: flex;
-  min-height: 4rem;
-  align-items: center;
-  margin: 0 auto;
-  &__link {
-    color: $mainColor;
-    transition: all .3s;
-    margin-right: 1.5rem;
-    &:last-child{
-      margin: 0 0 0 auto;
+  &__body {
+    display: flex;
+    width: 100%;
+    position: relative;
+    .socials {
+      display: none;
     }
-    &_logo {
-      pointer-events: none;
-    }
-    &._active:not(&_logo) {
-      &:any-link:hover {
-        transform: translate(0);
-      }
-      &:not(:last-child){
-        color: $greenColor;
-        text-shadow: 0 0 .5em $greenColor;
-        position: relative;
-        &::after {
-          content:'';
-          position: absolute;
-          left: 0;
-          top: 100%;
-          width: 100%;
-          background-color: $greenColor;
-          height: 2px;
-          box-shadow: 0 0 .5em $greenColor;
-        }
-    }
+  }
+
+  &__list {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    position: relative;
+
+    li {
+      margin: 0 0 0 2rem;
       &:last-child {
-        box-shadow: 0 0 .5rem $greenColor;
-        background-color: $greenColor;
-        color: $bgColor;
+        margin: 0 0 0 auto;
       }
-    }
-    &_focus {
-      &:any-link {
-        letter-spacing: .1em;
-        color: $greenColor;
-        border: 2px $greenColor solid;
-        border-radius: 8px;
-        padding: .5rem 1.5rem;
-        transition: .3s;
+      &:nth-child(1) {
+        margin: 0;
+      }
+
+      &:nth-child(2) {
+        margin: 0;
+        display: none;
+      }
+      &:not(:last-child):not(:nth-child(1)):hover {
+        transform: translate(0, -4px);
+      }
+      transition: .3s;
+
+      .menu__link {
+        position: relative;
         &:hover {
-          box-shadow: 0 0 .5rem $greenColor;
-          background-color: $greenColor;
-          color: $bgColor;
+          color: $greenColor;
         }
+        transition: all .3s;
+        &._active {
+          color: $greenColor;
+          transform: translateY(-4px);
+          text-shadow: 0 0 .5rem $greenColor;
+          position: relative;
+          transition: .3s;
+          &::after {
+            border-radius: 1px;
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 100%;
+            width: 100%;
+            background-color: $greenColor;
+            height: 2px;
+            box-shadow: 0 0 .5em $greenColor;
+          }
+        }
+
+        &_focus {
+            letter-spacing: .1em;
+            color: $greenColor;
+            border: 2px $greenColor solid;
+            border-radius: 8px;
+            padding: .5rem 1.5rem;
+            transition: .3s;
+
+            &:hover {
+              box-shadow: 0 0 .5rem $greenColor;
+              background-color: $greenColor;
+              color: $bgColor;
+            }
+        }
+
+
       }
     }
-    &:any-link:not(:last-child):hover {
-      color: $greenColor;
-      transform: translateY(-4px);
-    }
+  }
+
+  &__icon {
+    display: none;
+    position: absolute;
+    right: 1rem;
+    top: calc(50% - 11px);
+    width: 22px;
+    height: 22px;
   }
 }
