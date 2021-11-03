@@ -1,4 +1,7 @@
 @media (max-width: 1023px) {
+  .page__back-to-top {
+    display: none;
+  }
   body.lock {
     overflow: hidden;
   }
@@ -35,30 +38,34 @@
       justify-content: space-between;
       li {
         transition: .3s;
-        &:not(:nth-child(1)):hover {
-          transform: translate(0, 0px);
-        }
+        margin: 0;
         &:nth-child(1) {
           h3 {
             color: $bgColor;
+            letter-spacing: normal;
           }
           position: fixed;
           top: 21px;
           left: 1rem;
         }
-        margin: 0;
-        color: $bgColor;
-        ._active {
+        .menu__link {
           color: $bgColor;
-          &::after {
-            display: none;
+          &._active {
+            color: $bgColor;
           }
-        }
-        .menu__link_focus {
-          color: $bgColor;
-          letter-spacing: normal;
-          border: none;
-          padding: 0;
+          &_focus {
+            color: $bgColor;
+            background: none;
+            letter-spacing: normal;
+            border: none;
+            padding: 0;
+          }
+          &:not(&_focus)._active {
+            color: $bgColor;
+          }
+          }
+        &:not(:nth-child(1)):hover {
+          transform: translate(0, 0px);
         }
       }
     }

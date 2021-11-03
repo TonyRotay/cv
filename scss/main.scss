@@ -48,11 +48,10 @@
       pointer-events: visible;
       cursor: pointer;
       font-size: 1.5rem;
-      padding-right: 1.5rem;
       transition: .3s;
-
+      margin-right: 1.5rem;
       &:last-child {
-        padding: 0;
+        margin: 0;
       }
 
       &:hover {
@@ -86,6 +85,49 @@
     width: 100%;
     background-color: $greenColor;
     cursor: pointer;
+    border-radius: 2px;
+  }
+
+  &__back-to-top {
+    cursor: pointer;
+    transition: .3s;
+    position: fixed;
+    bottom: 1rem;
+    left: 1rem;
+    padding-left: 1.5rem;
+    p {
+      transition: .3s;
+    }
+    span {
+      transition: .3s;
+      position: relative;
+      right: 1.5rem;
+      bottom: -.6rem;
+      &::before, &::after {
+        transition: .3s;
+        position: absolute;
+        width: 10px;
+        height: 2px;
+        content: '';
+        background-color: $mainColor;
+      }
+      &::before {
+        left: -3px;
+        transform: rotate(-45deg);
+      }
+      &::after {
+        left: 3px;
+        transform: rotate(45deg);
+      }
+    }
+    &:hover {
+      p {
+        color: $greenColor;
+      }
+      span, span::before, span::after {
+        background-color: $greenColor;
+      }
+    }
   }
 }
 
@@ -359,12 +401,12 @@
           font-size: 1.5rem;
           color: $bgColor;
           transition: .3s;
-          &:last-child {
-            padding-left: 1.5rem;
-          }
           &:hover {
             color: $mainColor;
           }
+        }
+        a:nth-child(1) {
+          padding-right: .5rem;
         }
       }
     }

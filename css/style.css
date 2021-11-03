@@ -174,12 +174,12 @@ a, a:active, a:visited {
   pointer-events: visible;
   cursor: pointer;
   font-size: 1.5rem;
-  padding-right: 1.5rem;
   -webkit-transition: 0.3s;
   transition: 0.3s;
+  margin-right: 1.5rem;
 }
 .page__socials .socials__icon:last-child {
-  padding: 0;
+  margin: 0;
 }
 .page__socials .socials__icon:hover {
   color: #05E494;
@@ -207,6 +207,52 @@ a, a:active, a:visited {
   width: 100%;
   background-color: #05E494;
   cursor: pointer;
+  border-radius: 2px;
+}
+.page__back-to-top {
+  cursor: pointer;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  position: fixed;
+  bottom: 1rem;
+  left: 1rem;
+  padding-left: 1.5rem;
+}
+.page__back-to-top p {
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+.page__back-to-top span {
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  position: relative;
+  right: 1.5rem;
+  bottom: -0.6rem;
+}
+.page__back-to-top span::before, .page__back-to-top span::after {
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  position: absolute;
+  width: 10px;
+  height: 2px;
+  content: "";
+  background-color: #FFFFFF;
+}
+.page__back-to-top span::before {
+  left: -3px;
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+}
+.page__back-to-top span::after {
+  left: 3px;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+.page__back-to-top:hover p {
+  color: #05E494;
+}
+.page__back-to-top:hover span, .page__back-to-top:hover span::before, .page__back-to-top:hover span::after {
+  background-color: #05E494;
 }
 
 .screen {
@@ -591,11 +637,11 @@ a, a:active, a:visited {
   -webkit-transition: 0.3s;
   transition: 0.3s;
 }
-.portfolio .portfolio__workslist .work__icons i:last-child {
-  padding-left: 1.5rem;
-}
 .portfolio .portfolio__workslist .work__icons i:hover {
   color: #FFFFFF;
+}
+.portfolio .portfolio__workslist .work__icons a:nth-child(1) {
+  padding-right: 0.5rem;
 }
 
 .timeline {
@@ -801,6 +847,12 @@ a, a:active, a:visited {
 .menu__list li:last-child {
   margin: 0 0 0 auto;
 }
+.menu__list li:last-child .menu__link._active {
+  color: #0F0F0F;
+}
+.menu__list li:last-child .menu__link._active::after {
+  content: "";
+}
 .menu__list li:nth-child(1) {
   margin: 0;
 }
@@ -820,7 +872,12 @@ a, a:active, a:visited {
 .menu__list li .menu__link:hover {
   color: #05E494;
 }
-.menu__list li .menu__link._active {
+.menu__list li .menu__link_focus._active {
+  background-color: #05E494;
+  -webkit-box-shadow: 0 0 8px #05E494;
+          box-shadow: 0 0 8px #05E494;
+}
+.menu__list li .menu__link:not(.menu__list li .menu__link_focus)._active {
   color: #05E494;
   -webkit-transform: translateY(-4px);
           transform: translateY(-4px);
@@ -829,7 +886,7 @@ a, a:active, a:visited {
   -webkit-transition: 0.3s;
   transition: 0.3s;
 }
-.menu__list li .menu__link._active::after {
+.menu__list li .menu__link:not(.menu__list li .menu__link_focus)._active::after {
   border-radius: 1px;
   content: "";
   position: absolute;
@@ -842,6 +899,7 @@ a, a:active, a:visited {
           box-shadow: 0 0 0.5em #05E494;
 }
 .menu__list li .menu__link_focus {
+  background-color: #0F0F0F;
   letter-spacing: 0.1em;
   color: #05E494;
   border: 2px #05E494 solid;
@@ -866,6 +924,10 @@ a, a:active, a:visited {
 }
 
 @media (max-width: 1023px) {
+  .page__back-to-top {
+    display: none;
+  }
+
   body.lock {
     overflow: hidden;
   }
@@ -926,11 +988,6 @@ a, a:active, a:visited {
     -webkit-transition: 0.3s;
     transition: 0.3s;
     margin: 0;
-    color: #0F0F0F;
-  }
-  .menu__body .menu__list li:not(:nth-child(1)):hover {
-    -webkit-transform: translate(0, 0px);
-            transform: translate(0, 0px);
   }
   .menu__body .menu__list li:nth-child(1) {
     position: fixed;
@@ -939,18 +996,27 @@ a, a:active, a:visited {
   }
   .menu__body .menu__list li:nth-child(1) h3 {
     color: #0F0F0F;
+    letter-spacing: normal;
   }
-  .menu__body .menu__list li ._active {
+  .menu__body .menu__list li .menu__link {
     color: #0F0F0F;
   }
-  .menu__body .menu__list li ._active::after {
-    display: none;
+  .menu__body .menu__list li .menu__link._active {
+    color: #0F0F0F;
   }
   .menu__body .menu__list li .menu__link_focus {
     color: #0F0F0F;
+    background: none;
     letter-spacing: normal;
     border: none;
     padding: 0;
+  }
+  .menu__body .menu__list li .menu__link:not(.menu__body .menu__list li .menu__link_focus)._active {
+    color: #0F0F0F;
+  }
+  .menu__body .menu__list li:not(:nth-child(1)):hover {
+    -webkit-transform: translate(0, 0px);
+            transform: translate(0, 0px);
   }
   .menu__body.active {
     -webkit-transform: translate(-150%, 0px);

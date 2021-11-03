@@ -40,6 +40,14 @@
       margin: 0 0 0 2rem;
       &:last-child {
         margin: 0 0 0 auto;
+        .menu__link {
+          &._active {
+            color: $bgColor;
+            &::after {
+              content: '';
+            }
+          }
+        }
       }
       &:nth-child(1) {
         margin: 0;
@@ -60,7 +68,11 @@
           color: $greenColor;
         }
         transition: all .3s;
-        &._active {
+        &_focus._active {
+          background-color: $greenColor;
+          box-shadow: 0 0 8px $greenColor;
+        }
+        &:not(&_focus)._active {
           color: $greenColor;
           transform: translateY(-4px);
           text-shadow: 0 0 .5rem $greenColor;
@@ -78,8 +90,14 @@
             box-shadow: 0 0 .5em $greenColor;
           }
         }
+        //&._active {
+        //  background-color: $greenColor;
+        //  color: $bgColor;
+        //  box-shadow: 0 0 8px $greenColor;
+        //}
 
         &_focus {
+            background-color: $bgColor;
             letter-spacing: .1em;
             color: $greenColor;
             border: 2px $greenColor solid;

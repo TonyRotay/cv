@@ -2,6 +2,8 @@ particlesJS.load('particles-js', 'js/particles.json');
 
 document.querySelector('.header').style.visibility = 'hidden';
 document.querySelector('.header').style.opacity = '0';
+document.querySelector('.page__back-to-top').style.visibility = 'hidden';
+document.querySelector('.page__back-to-top').style.opacity = '0';
 
 if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|BB|PlayBook|IEMobile|Windows Phone|Kindle|Silk|Opera Mini/i.test(navigator.userAgent)) {
 
@@ -134,17 +136,38 @@ function menuSliderRemove(params) {
 
 pageSlider.init();
 
+const contact = document.querySelector('.screen__button_contact');
+contact.addEventListener('click', function () {
+    pageSlider.slideTo(7);
+});
+
+const backToTop = document.querySelector('.page__back-to-top');
+backToTop.addEventListener('click', function () {
+    pageSlider.slideTo(0);
+    document.querySelector('.header').style.visibility = 'hidden';
+    document.querySelector('.header').style.opacity = '0';
+    document.querySelector('.page__back-to-top').style.visibility = 'hidden';
+    document.querySelector('.page__back-to-top').style.opacity = '0';
+});
+
+
+
 document.addEventListener('wheel', onwheel);
+
 
 function onwheel() {
     document.querySelector('.screen_hero');
     if (document.querySelector('.screen_hero').classList.contains('swiper-slide-visible')){
         document.querySelector('.header').style.visibility = 'hidden';
         document.querySelector('.header').style.opacity = '0';
+        document.querySelector('.page__back-to-top').style.visibility = 'hidden';
+        document.querySelector('.page__back-to-top').style.opacity = '0';
     }
     else {
         document.querySelector('.header').style.visibility = 'visible';
         document.querySelector('.header').style.opacity = '1';
+        document.querySelector('.page__back-to-top').style.visibility = 'visible';
+        document.querySelector('.page__back-to-top').style.opacity = '1';
     }
 }
 
